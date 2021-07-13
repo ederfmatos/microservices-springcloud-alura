@@ -2,10 +2,12 @@ server:
   port: 8888
 
 spring:
-  profiles:
-    active: native
   cloud:
     config:
       server:
-        native:
-          search-locations: /home/ederfmatos/projects/microservices-springcloud-alura/config-files
+        git:
+          uri: https://github.com/ederfmatos/microservices-springcloud-configserver-alura
+          search-paths:
+            - provider
+          default-label: main
+          force-pull: true
