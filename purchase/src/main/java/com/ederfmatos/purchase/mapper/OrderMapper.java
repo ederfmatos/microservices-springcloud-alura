@@ -6,7 +6,7 @@ import com.ederfmatos.purchase.model.Order;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-@Mapper(componentModel = "Spring")
+@Mapper(componentModel = "spring")
 public interface OrderMapper {
 
     Order mapToEntity(OrderNewRequest orderNewRequest);

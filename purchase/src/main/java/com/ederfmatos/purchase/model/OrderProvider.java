@@ -2,11 +2,10 @@ package com.ederfmatos.purchase.model;
 
 import java.util.List;
 
-public record Order(
+public record OrderProvider(
         String id,
+        OrderStatus status,
         List<OrderItem> items,
-        Address address,
-        String status,
         Long preparationTime
 ) {
 }

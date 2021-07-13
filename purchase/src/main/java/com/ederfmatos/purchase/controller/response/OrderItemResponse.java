@@ -1,4 +1,4 @@
 package com.ederfmatos.purchase.controller.response;
 
-public record OrderItemResponse(Integer id, Integer quantity) {
+public record OrderItemResponse(String id, Integer quantity, ProductResponse product) {
 }
