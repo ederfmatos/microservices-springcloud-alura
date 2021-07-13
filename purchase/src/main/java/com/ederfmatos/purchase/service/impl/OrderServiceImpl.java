@@ -15,15 +15,19 @@ import java.util.UUID;
 @Service
 public class OrderServiceImpl implements OrderService {
 
+    private final RestTemplate restTemplate;
+
+    public OrderServiceImpl(RestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
+    }
+
     @Override
     public Order createNewOrder(Order order) {
-        RestTemplate restTemplate = new RestTemplate();
-
-        UriComponents uriComponents = UriComponentsBuilder.fromHttpUrl("http://localhost:8081/providers/providers")
+        UriComponents uriComponents = UriComponentsBuilder.fromHttpUrl("http://PROVIDER/providers/providers")
                 .queryParam("state", order.address().uf())
                 .build();
 
-        ResponseEntity<Provider> response = restTemplate.exchange(uriComponents.toUriString(), HttpMethod.GET, null, Provider.class);
+        ResponseEntity<Provider> response = this.restTemplate.exchange(uriComponents.toUriString(), HttpMethod.GET, null, Provider.class);
         Provider provider = response.getBody();
         System.out.println(provider);
 
