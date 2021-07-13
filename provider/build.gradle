@@ -30,7 +30,11 @@ dependencies {
     implementation 'org.mapstruct:mapstruct-processor:1.4.0.Final'
     annotationProcessor 'org.mapstruct:mapstruct-processor:1.4.0.Final'
     annotationProcessor 'org.mapstruct:mapstruct-jdk8:1.4.0.Final'
+
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:3.0.3'
+    implementation 'org.springframework.cloud:spring-cloud-config-client:3.0.4'
+
+    implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap:3.0.3'
 }
 
 test {
