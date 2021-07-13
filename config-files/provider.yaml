@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: root
+    password: 12345678
+    url: jdbc:mariadb://localhost:3306/provider_db
+  jpa:
+    hibernate:
+      ddl-auto: update
